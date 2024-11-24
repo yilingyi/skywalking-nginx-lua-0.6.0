@@ -217,6 +217,7 @@ function Client:reportTraces(metadata_buffer, backend_http_uri)
         end
     end
 
+
     if #segmentTransform > 0 then
         if sendSegments('[' .. segmentTransform .. ']', backend_http_uri) then
             totalCount = totalCount + count

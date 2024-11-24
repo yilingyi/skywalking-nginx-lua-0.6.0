@@ -34,7 +34,7 @@ function Tracer:start(upstream_name, correlation)
     local serviceName = metadata_shdict:get("serviceName")
     local serviceInstanceName = metadata_shdict:get('serviceInstanceName')
     local includeHostInEntrySpan = metadata_shdict:get('includeHostInEntrySpan')
-    local tracingContext = TC.new(serviceName, serviceInstanceName)
+    local tracingContext = TC.new(serviceName, serviceInstanceName, ngx.var.request_id)
 
     -- Constant pre-defined in SkyWalking main repo
     -- 6000 represents Nginx
